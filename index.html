@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://unpkg.com/formiojs@latest/dist/formio.full.min.css'>
+    <script src='https://unpkg.com/formiojs@latest/dist/formio.full.min.js'></script>
+</head>
+<body>
+<div id='formio'></div>
+
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script type='text/javascript'>
+    window.onload = function() {
+        Formio.createForm(document.getElementById('formio'), 'https://jligigqoqyofbgn.form.io/user', {
+            hooks: {
+                beforeSubmit: (submission, next) => {
+                    // Make a custom ajax call.
+                    $.ajax({
+                        url: 'https://data.qld.gov.au/api/3/action/datastore_search?resource_id=0ca6f77c-4088-4d77-8c88-beae2b57ce14&limit=5',
+                        method: 'POST',
+                        data: submission,
+                        complete: (errors) => {
+                            let submitErrors = null;
+                            if (errors) {
+                                submitErrors = [];
+                                errors.forEach((error) => {
+                                    submitErrors.push({
+                                        message: error.toString()
+                                    });
+                                });
+                            }
+                            next(submitErrors);
+                        }
+                    });
+                }
+            }
+        })
+    };
+</script>
+</body>
+</html>
