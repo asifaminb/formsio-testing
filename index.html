@@ -11,7 +11,7 @@
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script type='text/javascript'>
     window.onload = function() {
-        Formio.createForm(document.getElementById('formio'), 'https://jligigqoqyofbgn.form.io/user', {
+        Formio.createForm(document.getElementById('formio'), 'https://llxxwkjswvxxsss.form.io/foodandbeverage', {
             hooks: {
                 beforeSubmit: (submission, next) => {
                     // Make a custom ajax call.
@@ -37,5 +37,26 @@
         })
     };
 </script>
+<!--<script>-->
+<!--    var abn = $('#ABN').val();-->
+<!--    var guid = 'e36743bf-bb95-4c44-9a1c-bf50756169e2';-->
+
+<!--    var urlP = "https://abr.business.gov.au/json/AbnDetails.aspx?callback=abnCallback&abn="+ abn +"&guid=" + guid +"";-->
+<!--    $('#edku1de input').attr('disabled', 'disabled');-->
+<!--    $.ajax({-->
+<!--        url: urlP,-->
+<!--        dataType: 'jsonp',-->
+<!--        jsonpCallback: "abnCallback",-->
+<!--        success: function (data) {-->
+<!--            if(data.EntityName === ''){-->
+<!--                alert('ABN not valid');-->
+<!--                $('#edku1de input').val('');-->
+<!--            } else {-->
+<!--                $('#edku1de input').val(data.EntityName);-->
+<!--                //$('#Tradingname').val(data.EntityTypeName);-->
+<!--            }-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>
