@@ -9,34 +9,7 @@
 
 
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-<script type='text/javascript'>
-    window.onload = function() {
-        Formio.createForm(document.getElementById('formio'), 'https://llxxwkjswvxxsss.form.io/foodandbeverage', {
-            hooks: {
-                beforeSubmit: (submission, next) => {
-                    // Make a custom ajax call.
-                    $.ajax({
-                        url: 'https://data.qld.gov.au/api/3/action/datastore_search?resource_id=0ca6f77c-4088-4d77-8c88-beae2b57ce14&limit=5',
-                        method: 'POST',
-                        data: submission,
-                        complete: (errors) => {
-                            let submitErrors = null;
-                            if (errors) {
-                                submitErrors = [];
-                                errors.forEach((error) => {
-                                    submitErrors.push({
-                                        message: error.toString()
-                                    });
-                                });
-                            }
-                            next(submitErrors);
-                        }
-                    });
-                }
-            }
-        })
-    };
-</script>
+<script type="text/javascript">   window.onload = function() {     Formio.createForm(document.getElementById('formio'), 'https://jligigqoqyofbgn.form.io/admin/login');   }; </script>
 <!--<script>-->
 <!--    var abn = $('#ABN').val();-->
 <!--    var guid = 'e36743bf-bb95-4c44-9a1c-bf50756169e2';-->
